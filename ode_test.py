@@ -13,27 +13,27 @@ def rk4_step(x, h, F):
     k4 = F(x + h * k3)
     return x + h/6 * (k1 + 2*k2 + 2*k3 + k4)
 
-# ODE
+# ODE system for the vector field
 def F(z):
     x, y = z
     return np.array([x - x**3, -y])
 
 # Phase portrait
-x = np.linspace(-2, 2, 25)
-y = np.linspace(-2, 2, 25)
-X, Y = np.meshgrid(x, y)
+# x = np.linspace(-2, 2, 25)
+# y = np.linspace(-2, 2, 25)
+# X, Y = np.meshgrid(x, y)
 
-U = X - X**3
-V = -Y
+# U = X - X**3
+# V = -Y
 
-plt.figure(figsize=(5,5))
-plt.quiver(X, Y, U, V)
-plt.scatter([-1,0,1], [0,0,0], color='red')
-plt.axis('equal')
-plt.title("Phase portrait")
-plt.show()
+# plt.figure(figsize=(5,5))
+# plt.quiver(X, Y, U, V)
+# plt.scatter([-1,0,1], [0,0,0], color='red')
+# plt.axis('equal')
+# plt.title("Phase portrait")
+# plt.show()
 
-# Use of RK4
+# Integral curves
 # def integrate(F, x0, h, steps):
 #     traj = np.zeros((steps, len(x0)))
 #     x = x0.copy()
