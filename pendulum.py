@@ -31,11 +31,14 @@ def energy_color(z):
 
 # Figure setup
 fig, ax = plt.subplots(figsize=(6, 6))
+fig.patch.set_facecolor("black")
+ax.set_facecolor("black")
 ax.set_xlim(-np.pi, np.pi)
 ax.set_ylim(-3, 3)
 ax.set_aspect('equal')
 ax.axis('off')
-scat = ax.scatter([], [], s=4)
+scat = ax.scatter([], [], s=3, edgecolors="none")
+scat.set_alpha(0.9)
 
 # Update function
 def update(frame):
